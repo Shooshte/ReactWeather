@@ -13,7 +13,12 @@ let Weather = React.createClass({
   },
   handleSearch: function(location) {
     var that = this; // Get access to this inside callback
-    this.setState({isLoading: true});
+    this.setState({
+      isLoading: true,
+      errorMessage: undefined,
+      location: undefined,
+      temp: undefined
+    });
     openWeatherMap.getTemp(location).then(
         function(temp) { // Success callback
           that.setState({
@@ -29,6 +34,23 @@ let Weather = React.createClass({
           });
         }
     )
+  },
+  componentDidMount: function() {
+    // Get the query from the request
+    let location = this.props.location.query.location;
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+      // Remove the query from the URL
+      window.location.hash = '#/';
+    }
+  },
+  componentWillReceiveProps: function(newProps) {
+    let location = newProps.location.query.location;
+    if (location && location.length > 0) {
+      this.handleSearch(location);
+      // Remove the query from the URL
+      window.location.hash = '#/';
+    }
   },
   render: function() {
     let {isLoading, temp, location, errorMessage} = this.state;
