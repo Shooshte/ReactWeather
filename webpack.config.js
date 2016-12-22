@@ -21,6 +21,7 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
+      applicationStyles: 'app/styles/app.css',
       CityForm: 'app/components/CityForm.jsx',
       Examples: 'app/components/Examples.jsx',
       ErrorModal: 'app/components/ErrorModal.jsx',
