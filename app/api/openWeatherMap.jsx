@@ -12,7 +12,16 @@ module.exports = {
         if (res.data.cod && res.data.message) { // Catch all errors from OpenweatherAPI
           throw new Error(res.data.message);
         } else {
-          return res.data.main.temp;
+          return {
+            description: res.data.weather[0].description,
+            id: res.data.weather[0].icon,
+            temp: res.data.main.temp,
+            pressure: res.data.main.pressure,
+            humidity: res.data.main.humidity,
+            wind: res.data.wind,
+            sunrise: res.data.sys.sunrise,
+            sunset: res.data.sys.sunset
+          };
         }
       },
       function(err) { // Error callback

@@ -17,13 +17,17 @@ let Weather = React.createClass({
       isLoading: true,
       errorMessage: undefined,
       location: undefined,
-      temp: undefined
+      temp: undefined,
+      description: undefined,
+      id: undefined
     });
     openWeatherMap.getTemp(location).then(
-        function(temp) { // Success callback
+        function(data) { // Success callback
           that.setState({
             location: location,
-            temp: temp,
+            temp: data.temp,
+            description: data.description,
+            id: data.id,
             isLoading: false
           })
         },
@@ -53,14 +57,15 @@ let Weather = React.createClass({
     }
   },
   render: function() {
-    let {isLoading, temp, location, errorMessage} = this.state;
+    let {isLoading, temp, location, errorMessage, description, id} = this.state;
 
     function renderMessage() {
+      let weatherImageUrl = 'http://openweathermap.org/img/w/' + id + '.png';
       // Check for is loading first for subsequent searches
       if(isLoading) {
         return <h3 className="text-center">Fetching weather...</h3>;
       } else if (temp && location) {
-        return <WeatherText temp={temp} location={location}/>
+        return <WeatherText temp={temp} location={location} description={description} id={weatherImageUrl}/>
       }
     }
 
