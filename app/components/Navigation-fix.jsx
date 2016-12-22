@@ -21,18 +21,18 @@ let Navigation = React.createClass({
               <li><Link to="about" activeClassName="active">About</Link></li>
               <li><Link to="examples" activeClassName="active">Examples</Link></li>
             </ul>
-            </div>
+          </div>
           <div className="top-bar-right">
-          <form onSubmit={this.onSearch}>
-            <ul className="menu">
-              <li>
-                <input type="search" placeholder="New York" ref="location"/>
-              </li>
-              <li>
-                <input type="submit" className="button" value="Get weather"/>
-              </li>
-            </ul>
-          </form>
+            <form onSubmit={this.onSearch}>
+              <ul className="menu">
+                <li>
+                  <input type="search" placeholder="New York" ref="location"/>
+                </li>
+                <li>
+                  <input type="submit" className="button" value="Get weather"/>
+                </li>
+              </ul>
+            </form>
           </div>
         </div>
     );
