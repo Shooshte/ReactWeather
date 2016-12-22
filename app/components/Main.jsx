@@ -6,7 +6,7 @@ require('style!css!sass!applicationStyles');
 
 let Main = (props) => {
   return (
-      <div>
+      <div className="waContainer">
         <Navigation/>
         <div>
           <div>
