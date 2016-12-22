@@ -1,0 +1,54 @@
+@import 'pallete';
+
+// Navbar container
+.waNavbar {
+  // Positioning
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  // Colors
+  box-shadow: 4px 4px 4px #000;
+  background-color: #fff;
+  // Size
+  width: 100%;
+  ul {
+    list-style: none;
+    text-align: center;
+  }
+  .waNavLi {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    max-width: 82px;
+    width: 33.3%;
+    height: 56px;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 8px 12px 10px 12px;
+    a {
+      text-decoration: none;
+    }
+    i, span {
+      display: block;
+    }
+    span {
+      margin-top: 4px;
+      font-family: 'Roboto';
+      font-size: 12px;
+      &:hover {
+        font-size: 14px;
+        color: $baseColor;
+      }
+    }
+    .waActive {
+      font-size: 14px;
+      color: $baseColor;
+    }
+  }
+}
+
+
+// Active menu class
+.waActive {
+
+}

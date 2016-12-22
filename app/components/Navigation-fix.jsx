@@ -1,6 +1,8 @@
 let React = require('react');
 let {Link, IndexLink} = require('react-router');
 
+require('style!css!sass!navigationStyles');
+
 let Navigation = React.createClass({
   onSearch: function(e) {
     e.preventDefault();
@@ -13,27 +15,24 @@ let Navigation = React.createClass({
   },
   render: function() {
     return(
-        <div className="top-bar">
-          <div className="top-bar-left">
-            <ul className="menu">
-              <li className="menu-text">ReactWeather</li>
-              <li><IndexLink to="/" activeClassName="active" >Weather</IndexLink></li>
-              <li><Link to="about" activeClassName="active">About</Link></li>
-              <li><Link to="examples" activeClassName="active">Examples</Link></li>
+        <div className="waNavbar">
+            <ul>
+              <li className="waNavLi">
+                <IndexLink to="/" activeClassName="waActive" className="waNavButton">
+                  <i className="material-icons">face</i><span>Weather</span>
+                </IndexLink>
+              </li>
+              <li className="waNavLi">
+                <Link to="about" activeClassName="waActive">
+                  <i className="material-icons">face</i><span>About</span>
+                </Link>
+              </li>
+              <li className="waNavLi">
+                <Link to="examples" activeClassName="waActive">
+                  <i className="material-icons">face</i><span>Examples</span>
+                </Link><
+                /li>
             </ul>
-          </div>
-          <div className="top-bar-right">
-            <form onSubmit={this.onSearch}>
-              <ul className="menu">
-                <li>
-                  <input type="search" placeholder="New York" ref="location"/>
-                </li>
-                <li>
-                  <input type="submit" className="button" value="Get weather"/>
-                </li>
-              </ul>
-            </form>
-          </div>
         </div>
     );
   }

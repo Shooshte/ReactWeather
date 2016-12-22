@@ -27,6 +27,7 @@ module.exports = {
       Main: 'app/components/Main.jsx',
       About: 'app/components/About.jsx',
       Navigation: 'app/components/Navigation-fix.jsx',
+      navigationStyles: 'app/styles/navigation.scss',
       openWeatherMap: 'app/api/openWeatherMap.jsx',
       Weather: 'app/components/Weather.jsx',
       WeatherText: 'app/components/WeatherText.jsx'
