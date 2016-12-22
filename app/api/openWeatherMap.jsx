@@ -15,8 +15,8 @@ module.exports = {
           return res.data.main.temp;
         }
       },
-      function(res) { // Error callback
-        throw new Error(res.data.message);
+      function(err) { // Error callback
+        throw new Error(err.response.data.message);
     });
   }
 };

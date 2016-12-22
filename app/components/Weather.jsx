@@ -2,11 +2,13 @@ let React = require('react');
 let CityForm = require('CityForm');
 let WeatherText = require('WeatherText');
 let openWeatherMap = require('openWeatherMap');
+let ErrorModal = require('ErrorModal');
 
 let Weather = React.createClass({
   getInitialState: function() {
     return {
-      isLoading: false
+      isLoading: false,
+      errorMessage: undefined
     }
   },
   handleSearch: function(location) {
@@ -20,16 +22,16 @@ let Weather = React.createClass({
             isLoading: false
           })
         },
-        function(err) { // Error callback
-          alert(err);
+        function(e) { // Error callback
           that.setState({
-            isLoading: false
+            isLoading: false,
+            errorMessage: e.message
           });
         }
     )
   },
   render: function() {
-    let {isLoading, temp, location} = this.state;
+    let {isLoading, temp, location, errorMessage} = this.state;
 
     function renderMessage() {
       // Check for is loading first for subsequent searches
@@ -40,11 +42,20 @@ let Weather = React.createClass({
       }
     }
 
+    function renderError () {
+      if (typeof errorMessage === 'string') {
+        return (
+            <ErrorModal message={errorMessage}/>
+        );
+      }
+    }
+
     return (
         <div>
           <h1 className="text-center">Get Temperature</h1>
           <CityForm onSearch={this.handleSearch}/>
           {renderMessage()}
+          {renderError()}
         </div>
     );
   }
