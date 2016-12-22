@@ -19,19 +19,19 @@ let Navigation = React.createClass({
             <ul>
               <li className="waNavLi">
                 <IndexLink to="/" activeClassName="waActive" className="waNavButton">
-                  <i className="material-icons">face</i><span>Weather</span>
+                  <i className="material-icons md-36">face</i><span>Weather</span>
                 </IndexLink>
               </li>
               <li className="waNavLi">
                 <Link to="about" activeClassName="waActive">
-                  <i className="material-icons">face</i><span>About</span>
+                  <i className="material-icons md-36">face</i><span>About</span>
                 </Link>
               </li>
               <li className="waNavLi">
                 <Link to="examples" activeClassName="waActive">
-                  <i className="material-icons">face</i><span>Examples</span>
-                </Link><
-                /li>
+                  <i className="material-icons md-36">face</i><span>Examples</span>
+                </Link>
+              </li>
             </ul>
         </div>
     );
