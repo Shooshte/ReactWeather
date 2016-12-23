@@ -36,6 +36,6 @@ let Navigation = React.createClass({
         </div>
     );
   }
-})
+});
 
 module.exports = Navigation;

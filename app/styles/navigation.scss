@@ -26,20 +26,23 @@
     a {
       text-decoration: none;
       color: rgba(0, 0, 0, 0.87);
-    }
-    i, span {
-      display: block;
-    }
-    .material-icons {
-      font-size: 12px;
-    }
-    span {
-      margin-top: 4px;
-      font-family: 'Roboto';
-      font-size: 12px;
+      i, span {
+        display: block;
+      }
+      .material-icons {
+        font-size: 12px;
+      }
+      span {
+        margin-top: 4px;
+        font-family: 'Roboto';
+        font-size: 12px;
+      }
       &:hover {
         font-size: 14px;
         color: $baseColor;
+        .material-icons {
+          font-size: 14px;
+        }
       }
     }
     .waActive {
