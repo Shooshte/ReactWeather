@@ -22,6 +22,7 @@ module.exports = {
     alias: {
       applicationStyles: 'app/styles/main.scss',
       CityForm: 'app/components/CityForm.jsx',
+      cityFormStyles: 'app/styles/cityForm.scss',
       Examples: 'app/components/Examples.jsx',
       ErrorModal: 'app/components/ErrorModal.jsx',
       Main: 'app/components/Main.jsx',
@@ -30,7 +31,8 @@ module.exports = {
       navigationStyles: 'app/styles/navigation.scss',
       openWeatherMap: 'app/api/openWeatherMap.jsx',
       Weather: 'app/components/Weather.jsx',
-      WeatherText: 'app/components/WeatherText.jsx'
+      WeatherText: 'app/components/WeatherText.jsx',
+      weatherStyles: 'app/styles/weather.scss'
     },
     extensions: ['', '.js', '.jsx']
   },

@@ -1,7 +1,7 @@
 let React = require('react');
 let Navigation = require('Navigation');
 
-// App css
+// App scss
 require('style!css!sass!applicationStyles');
 
 let Main = (props) => {

@@ -4,6 +4,8 @@ let WeatherText = require('WeatherText');
 let openWeatherMap = require('openWeatherMap');
 let ErrorModal = require('ErrorModal');
 
+require('style!css!sass!weatherStyles');
+
 let Weather = React.createClass({
   getInitialState: function() {
     return {
@@ -79,10 +81,12 @@ let Weather = React.createClass({
 
     return (
         <div>
-          <h1 className="text-center page-title">Get Temperature</h1>
-          <CityForm onSearch={this.handleSearch}/>
-          {renderMessage()}
-          {renderError()}
+          <div className="waCard">
+            <h1 className="waHeader">Get Weather Info</h1>
+            <CityForm onSearch={this.handleSearch}/>
+            {renderMessage()}
+            {renderError()}
+          </div>
         </div>
     );
   }
