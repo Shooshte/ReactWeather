@@ -1,0 +1,32 @@
+@import 'pallete';
+
+.waForm {
+  label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.57);
+  }
+  input {
+    font-size: 16px;
+    height: 48px;
+    padding: 16px 8px;
+    border :0;
+    border-bottom: 1px solid black;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $baseColor;
+    }
+  }
+  button {
+    margin: 8px 0;
+    min-height: 48px;
+    border-radius: 2px;
+    min-width: 88px;
+    background-color: $baseColor;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
