@@ -18,11 +18,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 168px;
-    max-width: 246px;
+    min-width: 56px;
+    max-width: 82px;
     width: 33.3%;
-    height: 168px;
-    padding: 24px 36px 30px 36px;
+    height: 56px;
+    padding: 8px 12px 10px 12px;
     a {
       text-decoration: none;
       color: rgba(0, 0, 0, 0.87);
@@ -31,22 +31,22 @@
       display: block;
     }
     .material-icons {
-      font-size: 36px;
+      font-size: 12px;
     }
     span {
-      margin-top: 12px;
+      margin-top: 4px;
       font-family: 'Roboto';
-      font-size: 36px;
+      font-size: 12px;
       &:hover {
-        font-size: 42px;
+        font-size: 14px;
         color: $baseColor;
       }
     }
     .waActive {
-      font-size: 42px;
+      font-size: 14px;
       color: $baseColor;
       .material-icons {
-        font-size: 48px;
+        font-size: 16px;
       }
     }
   }
