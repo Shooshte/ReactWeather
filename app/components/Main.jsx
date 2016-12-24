@@ -9,7 +9,7 @@ let Main = (props) => {
       <div className="waContainer">
         <Navigation/>
         <div>
-          <div>
+          <div className="waContentContainer">
             {props.children}
           </div>
         </div>
