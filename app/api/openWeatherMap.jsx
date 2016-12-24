@@ -1,6 +1,6 @@
 let axios = require('axios');
 
-const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/forecast?appid=3d30860d289d3895e4937158a354baf5&units=metric&cnt=3';
+const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/forecast?appid=3d30860d289d3895e4937158a354baf5&units=metric&cnt=12';
 
 module.exports = {
   getData: function(location) {
@@ -12,7 +12,14 @@ module.exports = {
         if (res.data.cod !== '200' && res.data.message) { // Catch all errors from OpenweatherAPI
           throw new Error(res.data.message);
         } else {
-          return res.data.list;
+
+          let newList = [];
+          // return res.data.list;
+          for(let x = 0; x < 6; x += 2) {
+            newList.push(res.data.list[x])
+          }
+          return newList;
+
         }
       },
       function(err) { // Error callback
