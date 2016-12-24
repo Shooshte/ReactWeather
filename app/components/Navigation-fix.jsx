@@ -24,7 +24,7 @@ let Navigation = React.createClass({
               </li>
               <li className="waNavLi">
                 <Link to="current" activeClassName="waActive">
-                  <i className="material-icons">map</i><span>Current Weather</span>
+                  <i className="material-icons">map</i><span>Current</span>
                 </Link>
               </li>
               <li className="waNavLi">
