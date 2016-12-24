@@ -2,7 +2,6 @@ let React = require('react');
 let CityForm = require('CityForm');
 let WeatherText = require('WeatherText');
 let openWeatherMap = require('openWeatherMap');
-let ErrorModal = require('ErrorModal');
 
 require('style!css!sass!weatherStyles');
 
@@ -19,17 +18,13 @@ let Weather = React.createClass({
       isLoading: true,
       errorMessage: undefined,
       location: undefined,
-      temp: undefined,
-      description: undefined,
-      id: undefined
+      forecast: undefined
     });
-    openWeatherMap.getTemp(location).then(
+    openWeatherMap.getData(location).then(
         function(data) { // Success callback
           that.setState({
             location: location,
-            temp: data.temp,
-            description: data.description,
-            id: data.id,
+            forecast: data,
             isLoading: false
           })
         },
@@ -59,23 +54,31 @@ let Weather = React.createClass({
     }
   },
   render: function() {
-    let {isLoading, temp, location, errorMessage, description, id} = this.state;
+    let {isLoading, location, errorMessage, forecast} = this.state;
 
-    function renderMessage() {
-      let weatherImageUrl = 'http://openweathermap.org/img/w/' + id + '.png';
+    function renderForecast() {
       // Check for is loading first for subsequent searches
       if(isLoading) {
         return <h3 className="text-center">Fetching weather...</h3>;
-      } else if (temp && location) {
-        return <WeatherText temp={temp} location={location} description={description} id={weatherImageUrl}/>
+      } else if (forecast && location) {
+        return forecast.map((day) => {
+          return (
+              <div key={day.dt}>
+                <ul>
+                  <li>{day.dt_txt}</li>
+                  <li>{day.main.temp}</li>
+                  <li>{day.weather.description}</li>
+                  <li>{day.wind.speed}</li>
+                </ul>
+              </div>
+          )
+        });
       }
     }
 
     function renderError () {
       if (typeof errorMessage === 'string') {
-        return (
-            <ErrorModal message={errorMessage}/>
-        );
+        alert(errorMessage);
       }
     }
 
@@ -84,7 +87,7 @@ let Weather = React.createClass({
           <div className="waCard">
             <h1 className="waHeader">Get Weather Info</h1>
             <CityForm onSearch={this.handleSearch}/>
-            {renderMessage()}
+            {renderForecast()}
             {renderError()}
           </div>
         </div>
