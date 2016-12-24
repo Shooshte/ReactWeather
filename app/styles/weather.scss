@@ -1,12 +1,26 @@
 .waCard {
   background-color: #fff;
   box-shadow: 2px 2px 2px grey;
-  padding: 16px;
   margin: 8px;
+}
+
+.waCardContent {
+  padding: 16px;
 }
 
 .waHeader {
   margin-top: 8px;
   margin-bottom: 8px;
   font-size: 24px;
+}
+
+.waDay {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+  padding: 16px;
+}
+
+.waAlert {
+  padding: 16px;
+  font-size: 24px;
+  font-weight: 700;
 }

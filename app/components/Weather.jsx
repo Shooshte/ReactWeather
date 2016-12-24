@@ -59,11 +59,11 @@ let Weather = React.createClass({
     function renderForecast() {
       // Check for is loading first for subsequent searches
       if(isLoading) {
-        return <h3 className="text-center">Fetching weather...</h3>;
+        return <h3 className="waAlert">Fetching weather...</h3>;
       } else if (forecast && location) {
         return forecast.map((day) => {
           return (
-              <div key={day.dt} className="waCard">
+              <div key={day.dt} className="waDay">
                 <ul>
                   <li>{day.dt_txt}</li>
                   <li>{day.main.temp}</li>
@@ -86,10 +86,14 @@ let Weather = React.createClass({
     return (
         <div>
           <div className="waCard">
-            <h1 className="waHeader">Get Weather Info</h1>
-            <CityForm onSearch={this.handleSearch}/>
+            <div className="waCardContent">
+              <h1 className="waHeader">Get Weather Info</h1>
+              <CityForm onSearch={this.handleSearch}/>
+            </div>
           </div>
-          {renderForecast()}
+          <div className="waCard">
+            {renderForecast()}
+          </div>
           {renderError()}
         </div>
     );
