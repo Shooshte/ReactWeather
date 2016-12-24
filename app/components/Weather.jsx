@@ -63,7 +63,7 @@ let Weather = React.createClass({
       } else if (forecast && location) {
         return forecast.map((day) => {
           return (
-              <div key={day.dt}>
+              <div key={day.dt} className="waCard">
                 <ul>
                   <li>{day.dt_txt}</li>
                   <li>{day.main.temp}</li>
@@ -82,14 +82,15 @@ let Weather = React.createClass({
       }
     }
 
+    // TODO error display
     return (
         <div>
           <div className="waCard">
             <h1 className="waHeader">Get Weather Info</h1>
             <CityForm onSearch={this.handleSearch}/>
-            {renderForecast()}
-            {renderError()}
           </div>
+          {renderForecast()}
+          {renderError()}
         </div>
     );
   }
