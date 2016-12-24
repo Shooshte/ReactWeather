@@ -16,7 +16,7 @@ let CityForm = React.createClass({
         <div>
           <form onSubmit={this.onFromSubmit} className="waForm">
             <label htmlFor="location">Search:</label>
-            <input id="location" type="search" placeholder="New York" ref="location"/>
+            <input id="location" type="search" placeholder="New York" ref="location" autoComplete="off"/>
             <button className="button expanded hollow">GET WEATHER</button>
           </form>
         </div>
