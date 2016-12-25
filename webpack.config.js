@@ -32,6 +32,7 @@ module.exports = {
       openWeatherMap: 'app/api/openWeatherMap.jsx',
       Weather: 'app/components/Weather.jsx',
       WeatherText: 'app/components/WeatherText.jsx',
+      weatherTextStyles: 'app/styles/weatherText.scss',
       weatherStyles: 'app/styles/weather.scss'
     },
     extensions: ['', '.js', '.jsx']

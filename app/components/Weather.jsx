@@ -59,20 +59,11 @@ let Weather = React.createClass({
     function renderForecast() {
       // Check for is loading first for subsequent searches
       if(isLoading) {
-        return <h3 className="waAlert">Fetching weather...</h3>;
+        return <h3 className="waLoading">Fetching forecast...</h3>;
       } else if (forecast && location) {
         return forecast.map((day) => {
-          let dateObject = new Date(Date.parse(day.dt_txt));
-          let readableDate = dateObject.toDateString();
           return (
-              <div key={day.dt} className="waDay">
-                <ul>
-                  <li className="waDate">{readableDate}</li>
-                  <li>Temperature: {day.main.temp}°C</li>
-                  <li>Forecast: {day.weather[0].description}</li>
-                  <li>Wind speed: {day.wind.speed}</li>
-                </ul>
-              </div>
+             <WeatherText day={day} key={day.dt}/>
           )
         });
       }

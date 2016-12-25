@@ -1,10 +1,19 @@
 let React = require('react');
 
-let WeatherText = ({temp, location, description, id}) => {
-  return(
-      <div>
-        <h3 className="text-center">{description}<img src={id} /></h3>
-        <h3 className="text-center">It is {temp}°C in {location}</h3>
+require('style!css!sass!weatherTextStyles');
+
+let WeatherText = (props) => {
+  let day = props.day;
+  let dateObject = new Date(Date.parse(day.dt_txt));
+  let readableDate = dateObject.toDateString();
+  return (
+      <div className="waDay">
+        <ul>
+          <li className="waDate">{readableDate}</li>
+          <li>Temperature: {day.main.temp}°C</li>
+          <li>Forecast: {day.weather[0].description}</li>
+          <li>Wind speed: {day.wind.speed}</li>
+        </ul>
       </div>
   );
 }
