@@ -65,10 +65,10 @@ let Weather = React.createClass({
           return (
               <div key={day.dt} className="waDay">
                 <ul>
-                  <li>{day.dt_txt}</li>
-                  <li>{day.main.temp}</li>
-                  <li>{day.weather.description}</li>
-                  <li>{day.wind.speed}</li>
+                  <li className="waDate">{day.dt_txt}</li>
+                  <li>Temperature: {day.main.temp}°C</li>
+                  <li>Forecast: {day.weather[0].description}</li>
+                  <li>Wind speed: {day.wind.speed}</li>
                 </ul>
               </div>
           )
