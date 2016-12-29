@@ -62,21 +62,14 @@ let Weather = React.createClass({
         return <h3 className="waLoading">Fetching forecast...</h3>;
       } else if (forecast && location) {
 
-        // return forecast.map((day) => {
-        //   return (
-        //      <WeatherText day={day} key={day.dt}/>
-        //   )
-        // });
-
         return forecast.map((day) => {
           return (
               <div className="waDay" key={day.date}>
-                <p className="waDate">{day.date}</p>
+                <p className="waDate">{location}&nbsp;:&nbsp;{day.date}</p>
                 {renderForecast(day)}
               </div>
           )
         });
-
 
       }
     }
