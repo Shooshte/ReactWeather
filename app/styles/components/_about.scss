@@ -1,0 +1,21 @@
+.waSubheader {
+  padding: 8px;
+  font-size: $subheadingTextSize;
+  font-weight: $subheadingTextWeight;
+  color: $darkSecondaryText;
+  a {
+    color: $accentColor;
+    text-decoration: none;
+  }
+}
+
+.waBodyText {
+  font-size: $bodyTextSize;
+  font-weight: $bodyTextWeight;
+  color: $darkText;
+  padding: 8px;
+  a {
+    color: $accentColor;
+    text-decoration: none;
+  }
+}
