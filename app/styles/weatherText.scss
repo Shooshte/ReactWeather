@@ -1,10 +1,16 @@
 .waDay {
+  .waForecast {
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
+  }
   border-bottom: 1px solid rgba(0, 0, 0, 0.17);
   padding: 16px;
   .waDate {
     text-align: center;
     font-weight: 700;
     font-size: 18px;
+    margin-bottom: 8px;
   }
   .waForecastIcon {
     text-align: center;

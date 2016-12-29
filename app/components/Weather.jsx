@@ -56,19 +56,35 @@ let Weather = React.createClass({
   render: function() {
     let {isLoading, location, errorMessage, forecast} = this.state;
 
-    function renderForecast() {
+    function renderWholeForecast() {
       // Check for is loading first for subsequent searches
       if(isLoading) {
         return <h3 className="waLoading">Fetching forecast...</h3>;
       } else if (forecast && location) {
+
+        // return forecast.map((day) => {
+        //   return (
+        //      <WeatherText day={day} key={day.dt}/>
+        //   )
+        // });
+
         return forecast.map((day) => {
           return (
-             <WeatherText day={day} key={day.dt}/>
+              <div className="waDay" key={day.date}>
+                <p className="waDate">{day.date}</p>
+                {renderForecast(day)}
+              </div>
           )
         });
+
+
       }
     }
-
+    function renderForecast(day) {
+      return day.forecast.map((weatherForecast) => {
+        return <WeatherText day={weatherForecast} key={weatherForecast.dt}/>;
+      })
+    }
     function renderError () {
       if (typeof errorMessage === 'string') {
         alert(errorMessage);
@@ -85,7 +101,7 @@ let Weather = React.createClass({
             </div>
           </div>
           <div className="waCard">
-            {renderForecast()}
+            {renderWholeForecast()}
           </div>
           {renderError()}
         </div>
