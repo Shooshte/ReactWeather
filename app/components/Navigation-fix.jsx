@@ -23,11 +23,6 @@ let Navigation = React.createClass({
                 </IndexLink>
               </li>
               <li className="waNavLi">
-                <Link to="current" activeClassName="waActive">
-                  <i className="material-icons">map</i><span>Current</span>
-                </Link>
-              </li>
-              <li className="waNavLi">
                 <Link to="about" activeClassName="waActive">
                   <i className="material-icons">info</i><span>About</span>
                 </Link>

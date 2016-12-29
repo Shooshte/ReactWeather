@@ -23,7 +23,6 @@ module.exports = {
       applicationStyles: 'app/styles/main.scss',
       CityForm: 'app/components/CityForm.jsx',
       cityFormStyles: 'app/styles/cityForm.scss',
-      Examples: 'app/components/Examples.jsx',
       ErrorModal: 'app/components/ErrorModal.jsx',
       Main: 'app/components/Main.jsx',
       About: 'app/components/About.jsx',
