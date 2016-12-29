@@ -64,9 +64,11 @@ let Weather = React.createClass({
 
         return forecast.map((day) => {
           return (
-              <div className="waDay" key={day.date}>
-                <p className="waDate">{location}&nbsp;:&nbsp;{day.date}</p>
-                {renderForecast(day)}
+              <div className="waCard">
+                <div className="waDay" key={day.date}>
+                  <p className="waDate">{location}&nbsp;:&nbsp;{day.date}</p>
+                  {renderForecast(day)}
+                </div>
               </div>
           )
         });
@@ -93,9 +95,7 @@ let Weather = React.createClass({
               <CityForm onSearch={this.handleSearch}/>
             </div>
           </div>
-          <div className="waCard">
-            {renderWholeForecast()}
-          </div>
+          {renderWholeForecast()}
           {renderError()}
         </div>
     );

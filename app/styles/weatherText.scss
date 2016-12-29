@@ -1,10 +1,12 @@
 .waDay {
   .waForecast {
-    width: 40%;
-    padding: 8px;
+    width: 50%;
     display: inline-block;
     margin: 0 auto;
     text-align: center;
+    .waForecastList {
+      padding: 8px;
+    }
     .waTime {
       font-size: 18px;
       font-weight: bold;
@@ -22,3 +24,4 @@
     text-align: center;
   }
 }
+

@@ -22,7 +22,7 @@ let WeatherText = (props) => {
 
   return (
       <div className="waForecast">
-        <ul>
+        <ul className="waForecastList">
           <li className="waTime">{hours}:{minutes}</li>
           <li className="waForecastIcon"><img src={actualIconURL} /></li>
           <li>Temperature: {day.main.temp}°C</li>
