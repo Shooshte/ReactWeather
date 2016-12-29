@@ -1,9 +1,6 @@
 let React = require('react');
 let Navigation = require('Navigation');
 
-// App scss
-require('style!css!sass!applicationStyles');
-
 let Main = (props) => {
   return (
       <div className="waContainer">

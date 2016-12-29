@@ -1,8 +1,6 @@
 let React = require('react');
 let {Link, IndexLink} = require('react-router');
 
-require('style!css!sass!navigationStyles');
-
 let Navigation = React.createClass({
   onSearch: function(e) {
     e.preventDefault();

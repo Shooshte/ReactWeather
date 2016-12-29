@@ -1,7 +1,5 @@
 let React = require('react');
 
-require('style!css!sass!cityFormStyles');
-
 let CityForm = React.createClass({
   onFromSubmit: function(e) {
     e.preventDefault();
@@ -15,7 +13,7 @@ let CityForm = React.createClass({
     return (
         <div>
           <form onSubmit={this.onFromSubmit} className="waForm">
-            <label htmlFor="location">Search:</label>
+            <label htmlFor="location">City Name:</label>
             <input id="location" type="search" placeholder="New York" ref="location" autoComplete="off"/>
             <button className="button expanded hollow">GET WEATHER</button>
           </form>

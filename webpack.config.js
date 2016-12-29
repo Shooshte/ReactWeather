@@ -20,19 +20,14 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      applicationStyles: 'app/styles/main.scss',
+      applicationStyles: 'app/styles/app.scss',
       CityForm: 'app/components/CityForm.jsx',
-      cityFormStyles: 'app/styles/cityForm.scss',
-      ErrorModal: 'app/components/ErrorModal.jsx',
       Main: 'app/components/Main.jsx',
       About: 'app/components/About.jsx',
       Navigation: 'app/components/Navigation-fix.jsx',
-      navigationStyles: 'app/styles/navigation.scss',
       openWeatherMap: 'app/api/openWeatherMap.jsx',
       Weather: 'app/components/Weather.jsx',
-      WeatherText: 'app/components/WeatherText.jsx',
-      weatherTextStyles: 'app/styles/weatherText.scss',
-      weatherStyles: 'app/styles/weather.scss'
+      WeatherText: 'app/components/WeatherText.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },

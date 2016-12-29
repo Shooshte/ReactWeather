@@ -1,0 +1,21 @@
+.waDay {
+  .waForecast {
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    .waForecastList {
+      padding: 8px;
+    }
+    .waTime,
+    .waTemp {
+      font-size: $subheadingTextSize;
+      font-weight: $subheadingTextWeight;
+      color: $darkSecondaryText;
+    }
+  }
+  .waForecastIcon {
+    text-align: center;
+  }
+}
+

@@ -6,6 +6,9 @@ let Main = require('Main');
 let Weather = require('Weather');
 let About = require('About');
 
+// App scss
+require('style!css!sass!applicationStyles');
+
 ReactDOM.render(
     <Router history={hashHistory}>
       <Route path="/" component={Main}>

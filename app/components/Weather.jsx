@@ -3,8 +3,6 @@ let CityForm = require('CityForm');
 let WeatherText = require('WeatherText');
 let openWeatherMap = require('openWeatherMap');
 
-require('style!css!sass!weatherStyles');
-
 let Weather = React.createClass({
   getInitialState: function() {
     return {
@@ -64,8 +62,8 @@ let Weather = React.createClass({
 
         return forecast.map((day) => {
           return (
-              <div className="waCard">
-                <div className="waDay" key={day.date}>
+              <div className="waCard" key={day.date}>
+                <div className="waDay">
                   <p className="waDate">{location}&nbsp;:&nbsp;{day.date}</p>
                   {renderForecast(day)}
                 </div>
@@ -91,7 +89,7 @@ let Weather = React.createClass({
         <div>
           <div className="waCard">
             <div className="waCardContent">
-              <h1 className="waHeader">Get Weather Info</h1>
+              <h1 className="waHeader">Get Weather Forecast</h1>
               <CityForm onSearch={this.handleSearch}/>
             </div>
           </div>
